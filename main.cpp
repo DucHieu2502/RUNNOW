@@ -137,6 +137,7 @@ int main(int argc, char *argv[]){
 
     bool quit = false;
     bool is_pause = false;
+    bool win = false;
     const int SCREEN_FPS = 60;
     const int SCREEN_TICK_PER_FRAME = 1000 / SCREEN_FPS;
 
@@ -150,6 +151,7 @@ int main(int argc, char *argv[]){
                 if(event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_r){
                     spaceship = Spaceship();
                     spaceship.LoadIMG(renderer);
+                    spaceship.LoadShootSound("sound//bulletsound.wav");
                     game_map = GameMap();
                     game_map.loadMap("tilesmap/map01.dat");
                     game_map.loadTiles(renderer);
@@ -159,15 +161,29 @@ int main(int argc, char *argv[]){
                     quit = true;
                 }
             }
+            else if(win){
+                if(event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_r){
+                    spaceship = Spaceship();
+                    spaceship.LoadIMG(renderer);
+                    spaceship.LoadShootSound("sound//bulletsound.wav");
+                    game_map = GameMap();
+                    game_map.loadMap("tilesmap/map01.dat");
+                    game_map.loadTiles(renderer);
+                    win = false;
+                }
+                if(event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_ESCAPE){
+                    quit = true;
+                }
+            }
             if (!spaceship.IsGameOver()) {
-                if(event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_p){
+                if(event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_p && !win){
                     is_pause = !is_pause;
                 }
 
                 if (!is_pause) {
                     game_map.UpdateMapPos(spaceship.GetRect().x);            //cuon man
                     spaceship.Update(game_map.GetMap().start_x_, game_map);  //cap nhat tau va va cham
-                    spaceship.HandleInputAction(event, renderer);            //xu ly su kien
+                    spaceship.HandleInputAction(event, renderer);
                 }
             } else {      //neu game over
                 if(event.type == SDL_KEYDOWN){
@@ -175,6 +191,7 @@ int main(int argc, char *argv[]){
                     case SDLK_r:  //reset game
                         spaceship = Spaceship();
                         spaceship.LoadIMG(renderer);
+                        spaceship.LoadShootSound("sound//bulletsound.wav");
                         game_map = GameMap();
                         game_map.loadMap("tilesmap/map01.dat");
                         game_map.loadTiles(renderer);
@@ -214,6 +231,39 @@ int main(int argc, char *argv[]){
                 pause.SetColor(Text::WHITE_TEXT);
                 pause.LoadFromRenderText(font_time, renderer);
                 pause.RenderText(renderer, 1100, 10);
+
+                if(game_map.GetWin()){
+                        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 200);
+                        SDL_Rect overlay = {0, 0, SCREEN_WIDTH, SCREEN_HEIGHT};
+                        SDL_RenderFillRect(renderer, &overlay);
+
+                        background.render(renderer);
+
+                        Text pause_title;
+                        pause_title.SetText("YOU WIN!");
+                        pause_title.SetColor(Text::WHITE_TEXT);
+                        pause_title.LoadFromRenderText(game_over_font, renderer);
+                        pause_title.RenderText(renderer,
+                                            (SCREEN_WIDTH - pause_title.GetWidth()) / 2,
+                                             SCREEN_HEIGHT / 2 - 200);
+
+                        Text reset_text;
+                        reset_text.SetText("Reset Game [R]");
+                        reset_text.SetColor(Text::WHITE_TEXT);
+                        reset_text.LoadFromRenderText(font_time, renderer);
+                        reset_text.RenderText(renderer,
+                                            (SCREEN_WIDTH - reset_text.GetWidth()) / 2,
+                                             SCREEN_HEIGHT / 2 + 50);
+
+                        Text exit_text;
+                        exit_text.SetText("Exit Game [ESC]");
+                        exit_text.SetColor(Text::WHITE_TEXT);
+                        exit_text.LoadFromRenderText(font_time, renderer);
+                        exit_text.RenderText(renderer,
+                                            (SCREEN_WIDTH - exit_text.GetWidth()) / 2,
+                                            SCREEN_HEIGHT / 2 + 150);
+                        win = true;
+                    }
                 } else {
                 // neu game pause
                 SDL_SetRenderDrawColor(renderer, 0, 0, 0, 200);

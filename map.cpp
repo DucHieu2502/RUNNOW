@@ -150,6 +150,10 @@ bool GameMap::DestroyTile(int bullet_x, int bullet_y, int bullet_width, int bull
                 game_map_.tile[y][x] = 0;
                 return true;
             }
+            if(game_map_.tile[y][x] == 3){
+                is_win = true;
+                game_map_.tile[y][x] = 0;
+            }
         }
     }
 

@@ -28,6 +28,7 @@ const std::string WINDOW_TITLE = "Run Now";
 const std::string BACKGROUND_ = "img//background_galaxy.png";
 const std::string SPACESHIP = "img//spaceship.png";
 const std::string BULLET = "img//bullet.png";
+
 #define TILE_SIZE 64
 
 #define MAX_MAP_X 400
@@ -43,6 +44,7 @@ typedef struct Map{
     int tile[MAX_MAP_Y][MAX_MAP_X];
     char* file_name_;
 };
+
 #endif // CONSTANTS_H
 
 
