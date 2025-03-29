@@ -1,0 +1,99 @@
+# depslib dependency file v1.0
+1743217628 source:d:\baitapcode\runnow\main.cpp
+	"Constants.h"
+	"Graphics.h"
+	"map.h"
+	"Spaceship.h"
+	"Text.h"
+
+1743195508 d:\baitapcode\runnow\constants.h
+	<string>
+	<SDL.h>
+	<windows.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<SDL_mixer.h>
+
+1742766219 d:\baitapcode\runnow\graphics.h
+	"Constants.h"
+
+1742289652 source:d:\baitapcode\runnow\graphics.cpp
+	"Graphics.h"
+
+1741702579 source:d:\baitapcode\runnow\character.cpp
+	<SDL.h>
+	<SDL_image.h>
+	<string>
+	"Constants.h"
+	"Graphics.h"
+	"Character.h"
+
+1741701937 d:\baitapcode\runnow\character.h
+	<SDL.h>
+	<SDL_image.h>
+	"Constants.h"
+	"Graphics.h"
+
+1741750210 source:d:\baitapcode\runnow\drawingfunctions.cpp
+	<SDL.h>
+	<SDL_image.h>
+	<string>
+	"Constants.h"
+	"DrawingFunctions.h"
+
+1741750147 d:\baitapcode\runnow\drawingfunctions.h
+	<SDL.h>
+	<SDL_image.h>
+	<string>
+	"Constants.h"
+
+1742201054 source:d:\baitapcode\runnow\constants.cpp
+	"Constants.h"
+
+1743195303 source:d:\baitapcode\runnow\map.cpp
+	"map.h"
+	<random>
+	<algorithm>
+
+1743157567 d:\baitapcode\runnow\map.h
+	<vector>
+	"Constants.h"
+	"Graphics.h"
+	"enemy.h"
+
+1743199526 d:\baitapcode\runnow\spaceship.h
+	<vector>
+	"Constants.h"
+	"Graphics.h"
+	"Bullet.h"
+	"map.h"
+	<SDL_mixer.h>
+
+1743199526 source:d:\baitapcode\runnow\spaceship.cpp
+	"Spaceship.h"
+	"map.h"
+	"Bullet.h"
+	"Constants.h"
+	"enemy.h"
+
+1743150687 d:\baitapcode\runnow\bullet.h
+	"Graphics.h"
+	"Constants.h"
+
+1743152930 source:d:\baitapcode\runnow\bullet.cpp
+	"Bullet.h"
+
+1743144186 source:d:\baitapcode\runnow\enemy.cpp
+	"enemy.h"
+
+1743144170 d:\baitapcode\runnow\enemy.h
+	"Bullet.h"
+
+1743189059 source:d:\baitapcode\runnow\text.cpp
+	"Text.h"
+
+1743188816 d:\baitapcode\runnow\text.h
+	"Constants.h"
+
+1743190555 source:d:\baitapcode\runnow\menu.cpp
+
