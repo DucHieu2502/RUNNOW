@@ -267,6 +267,10 @@ bool Spaceship::CheckCollisionWithEnemyTiles(GameMap& game_map) {
             if (current_map.tile[y][x] == 1||current_map.tile[y][x] == 2) {
                 return true;
             }
+            if (current_map.tile[y][x] == 3) {
+                is_win = true;
+                return false;
+            }
         }
     }
 

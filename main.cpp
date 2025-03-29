@@ -232,7 +232,7 @@ int main(int argc, char *argv[]){
                 pause.LoadFromRenderText(font_time, renderer);
                 pause.RenderText(renderer, 1100, 10);
 
-                if(game_map.GetWin()){
+                if(spaceship.GetWin()){
                         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 200);
                         SDL_Rect overlay = {0, 0, SCREEN_WIDTH, SCREEN_HEIGHT};
                         SDL_RenderFillRect(renderer, &overlay);

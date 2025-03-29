@@ -150,10 +150,6 @@ bool GameMap::DestroyTile(int bullet_x, int bullet_y, int bullet_width, int bull
                 game_map_.tile[y][x] = 0;
                 return true;
             }
-            if(game_map_.tile[y][x] == 3){
-                is_win = true;
-                game_map_.tile[y][x] = 0;
-            }
         }
     }
 
@@ -170,7 +166,7 @@ void GameMap::GenerateEnemyBullets(SDL_Renderer* renderer){
     last_bullet_time = current_time;
 
     // Hạn chế số lượng địch được bắn
-    int max_shooters = 2;
+    int max_shooters = 3;
     int shooter_count = 0;
 
     for(int y = 0; y < MAX_MAP_Y && shooter_count < max_shooters; y++){

@@ -54,6 +54,8 @@ public:
     bool IsGameOver() const { return game_over_; }
     void SetGameOver(bool status) { game_over_ = status; }
 
+    bool GetWin() const {return is_win;}
+    void SetWin(bool win) {is_win = win;}
 private:
     std::vector <Bullet*> p_bullet_list_;
 
@@ -74,7 +76,7 @@ private:
 
     int score_ = 0;
     bool game_over_ = false;
-
+    bool is_win = false;
 };
 
 #endif // SPACESHIP_H

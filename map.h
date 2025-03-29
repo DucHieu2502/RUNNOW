@@ -33,15 +33,13 @@ public:
     void HandleEnemyBullets (SDL_Renderer* renderer);
 
     std::vector<EnemyBullet*>& get_enemy_bullets() { return enemy_bullets_; }
-    bool GetWin() const {return is_win;}
-    void SetWin(bool win) {is_win = win;}
+
 private:
     Map game_map_;
     TileMap tile_map[MAX_TILES];
     std::vector<EnemyBullet*> enemy_bullets_;
     Uint32 last_bullet_time_;
 
-    bool is_win = false;
     bool destroyed_tiles[MAX_MAP_Y][MAX_MAP_X] = {false};
 
 };
