@@ -105,7 +105,7 @@ void Spaceship::Update(int map_start_x, GameMap& game_map){
 
     rect_.x = static_cast<int>(precise_x_pos);
     rect_.y = static_cast<int>(precise_y_pos);
-    // Giới hạn tàu vũ trụ trong 1/3 đầu tiên của màn hình
+    // Giới hạn tàu vũ trụ trong màn hình
     int screen_third = SCREEN_WIDTH ;
 
     if (rect_.x < 0) {

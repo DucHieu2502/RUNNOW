@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1743232976 source:d:\baitapcode\runnow\main.cpp
+1743334049 source:d:\baitapcode\runnow\main.cpp
 	"Constants.h"
 	"Graphics.h"
 	"map.h"
 	"Spaceship.h"
 	"Text.h"
+	"menu.h"
 
 1743230705 d:\baitapcode\runnow\constants.h
 	<string>
@@ -50,7 +51,7 @@
 1742201054 source:d:\baitapcode\runnow\constants.cpp
 	"Constants.h"
 
-1743233937 source:d:\baitapcode\runnow\map.cpp
+1743235205 source:d:\baitapcode\runnow\map.cpp
 	"map.h"
 	<random>
 	<algorithm>
@@ -69,7 +70,7 @@
 	"map.h"
 	<SDL_mixer.h>
 
-1743233030 source:d:\baitapcode\runnow\spaceship.cpp
+1743332149 source:d:\baitapcode\runnow\spaceship.cpp
 	"Spaceship.h"
 	"map.h"
 	"Bullet.h"
@@ -95,5 +96,12 @@
 1743230705 d:\baitapcode\runnow\text.h
 	"Constants.h"
 
-1743190555 source:d:\baitapcode\runnow\menu.cpp
+1743333285 source:d:\baitapcode\runnow\menu.cpp
+	"menu.h"
+
+1743332149 d:\baitapcode\runnow\menu.h
+	"Constants.h"
+	"Graphics.h"
+	"Text.h"
+	<vector>
 
